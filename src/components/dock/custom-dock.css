@@ -1,0 +1,32 @@
+.anticon {
+  color: rgb(196 148 210);
+  /* font-size: 4vw; */
+  /* padding: 20vh; */
+  font-size: 25px;
+  margin: 10px;
+}
+
+.custom-dock {
+    /* position: absolute;
+    justify-self: center;
+    top: 0vh; */
+    width: auto;
+    /* padding: 20vw; */
+    
+    
+}
+
+.custom-dock-icon {
+    /* width: 4vw;
+    height: 4vw; */
+}
+
+/* .is-sticky {
+    position: absolute;
+    justify-self: center;
+    top: 0vh;
+}
+
+.not-sticky {
+    position: relative;
+} */

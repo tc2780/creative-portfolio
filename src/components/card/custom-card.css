@@ -1,0 +1,43 @@
+.custom-card {
+    background-color: rgba(95, 26, 132, 0.3);
+    /* color: white; */
+    width: 75vw;
+    padding: 20px;
+
+}
+
+.custom-magic-card {
+    /* border: 5px;
+    border-color: red; */
+    /* border: none; */
+    /* padding: 0px; */
+    /* border-radius: 20px; */
+    /* border: 15px solid transparent !important;
+
+    border-radius: 20px; */
+    /* background-color: rgba(158, 34, 208, 0.25) !important; */
+    /* backdrop-filter: blur(8px); */
+    /* padding: 0;
+    margin: 0; */
+}
+
+
+
+/* .custom-antd-card {
+    background-color: rgba(158, 34, 208, 0.3) !important;
+    
+}
+
+.ant-card-head{
+    background-color: transparent;
+    color: white;
+
+}
+.ant-card-head-title {
+    color: white;
+}
+
+.ant-card-body {
+    background-color: transparent;
+    color: white;
+} */
