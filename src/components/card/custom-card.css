@@ -32,12 +32,15 @@
 }
 
 .custom-tag {
-    font-size: 16px;
+    font-size: 15px;
     color: white;
     text-shadow: 0px 0px 3px black;
-    background-color: #c1bfdf;
-    padding: 5px 10px 5px 10px;
+    background-color: #434162;
+    padding: 4px 9px 4px 9px;
+    margin: 5px 0px 5px 10px;
     font-family: inherit;
-    /* border-shadow: 0px 0px 2px black; */
-    margin-top: 10px
+    height: fit-content;
+    /* height: 33px */
+    /* box-shadow: 0px 0px 2px black; */
+    /* margin-top: 10px */
 }

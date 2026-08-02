@@ -59,9 +59,6 @@ function App() {
           Image: {
             // previewOperationHoverColor: '#ff0000',
             colorBgMask: '#0d0a0ae8',
-          },
-          Button: {
-            defaultActiveBorderColor: '#ff0000'
           }
         }
       }}
@@ -146,7 +143,9 @@ function App() {
             thumbnailSrc={theMarble}
             thumbnailAlt="The Marble Img"
             />
-          }>
+          }
+          tags={["2D Animation"]}
+          >
 
       </CustomCard>
       </BlurFade>
@@ -183,7 +182,9 @@ function App() {
             {`version ${currentSite}`}
           </div>
           </>
-          }>
+          }
+          tags={["React", "TypeScript"]}
+          >
 
       </CustomCard>
       </BlurFade>
@@ -206,7 +207,7 @@ function App() {
               />
         }
         actions={[
-            <Tooltip title="GitHub Repo">
+            <Tooltip title="GitHub Repo" key="steam-repo">
                 <Button 
                     type="default" 
                     className=""
@@ -218,7 +219,7 @@ function App() {
                 >
                 </Button>
             </Tooltip>,
-            <Tooltip title="Featured on 447 Hall of Fame">
+            <Tooltip title="Featured on 447 Hall of Fame" key="steam-hof">
                 <Button 
                     type="default" 
                     className=""
@@ -229,7 +230,7 @@ function App() {
                     href="https://www.students.cs.ubc.ca/~cs-447/25Jan/fame/" target="_blank" 
                 />
             </Tooltip>,
-            <Tooltip title="Hosted on Vercel" >
+            <Tooltip title="Hosted on Vercel" key="steam-link">
                 <Button 
                     type="default" 
                     className=""
@@ -241,6 +242,7 @@ function App() {
                 />
             </Tooltip>
           ]}
+          tags={["D3", "HTML", "CSS", "JS"]}
         >
 
       </CustomCard>
@@ -266,7 +268,7 @@ function App() {
             />
         }
         actions={[
-            <Tooltip title="Hosted on Vercel" >
+            <Tooltip title="Hosted on Vercel" key="cat-link">
                 <Button 
                     type="default" 
                     className=""
@@ -279,6 +281,7 @@ function App() {
                 </Button>
             </Tooltip>
         ]}
+        tags={["OpenGL", "JS"]}
         >
       </CustomCard>
       </BlurFade>
@@ -297,7 +300,7 @@ function App() {
             <Image src={hauntedHouseStudy} className='card-img rounded-xl'/>
         }
         actions={[
-            <Tooltip title="Hosted on Vercel" >
+            <Tooltip title="Hosted on Vercel" key="house-link">
                 <Button 
                     type="default" 
                     className=""
@@ -310,6 +313,7 @@ function App() {
                 </Button>
             </Tooltip>
         ]}
+        tags={["ThreeJS", "JS"]}
         >
 
       </CustomCard>
@@ -329,7 +333,7 @@ function App() {
             <Image src={galaxyStudy} className='card-img rounded-xl'/>
         }
          actions={[
-            <Tooltip title="Hosted on Vercel" >
+            <Tooltip title="Hosted on Vercel" key="galaxy-link">
                 <Button 
                     type="default" 
                     className=""
@@ -342,6 +346,7 @@ function App() {
                 </Button>
             </Tooltip>
         ]}
+        tags={["ThreeJS", "JS"]}
         >
 
       </CustomCard>

@@ -52,14 +52,18 @@ function CustomCard(props: CardProps) {
                     
                     <div className="card-title text-center text-3xl font-bold text-white pt-4 pb-8">{props.title}</div>
                     {props.cover}
-                    <CardAction className="flex flex-row w-[50vw] justify-center self-center mt-4">
-                        {props.actions}
-                        {props.tags?.map((tag, index) => {
-                            return (
-                                // <div>{tag}</div>
-                            <Tag className="custom-tag">{tag || index}</Tag>
-                            )
-                        })}
+                    <CardAction className="flex flex-row w-[50vw] justify-between items-center self-center mt-4">
+                        <div className="card-button-row">
+                            {props.actions}
+                        </div>
+                        <div className="tag-row">
+                            {props.tags?.map((tag, index) => {
+                                return (
+                                    // <div>{tag}</div>
+                                <Tag className="custom-tag" key={`${tag}-${index}`}>{tag || index}</Tag>
+                                )
+                            })}
+                        </div>
                     </CardAction>
                     <div className="card-description text-center text-[18px] pt-4">{props.description}</div>
                 </CardContent>
