@@ -1,8 +1,9 @@
 .custom-card {
-    background-color: rgba(95, 26, 132, 0.3);
+    background-color: rgba(44, 12, 61, 0.189);
     /* color: white; */
     width: 75vw;
     padding: 20px;
+    height: fit-content;
 
 }
 
@@ -21,23 +22,11 @@
     margin: 0; */
 }
 
-
-
-/* .custom-antd-card {
-    background-color: rgba(158, 34, 208, 0.3) !important;
-    
+.card-img {
+    width: 50vw;
+    align-self: center;
 }
 
-.ant-card-head{
-    background-color: transparent;
-    color: white;
-
+.card-video {
+    border-color: transparent;
 }
-.ant-card-head-title {
-    color: white;
-}
-
-.ant-card-body {
-    background-color: transparent;
-    color: white;
-} */
