@@ -1,7 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import catHeader from './assets/catHeader.png'
 import harmonicHustle from './assets/harmonic-hustle.png'
 import theMarble from './assets/theMarble.png'
+import websiteV1 from './assets/websiteV1.png'
+import websiteV2 from './assets/websiteV2.png'
+import websiteV3 from './assets/websiteV3.png'
+import steamGames from './assets/analyzingSteamGames.png'
+import catAnimationStudy from './assets/catAnimationStudy.png'
+import hauntedHouseStudy from './assets/hauntedHouseStudy.png'
+import galaxyStudy from './assets/galaxyStudy.png'
+
 
 import './App.css'
 import { Particles } from './components/ui/particles'
@@ -10,13 +18,54 @@ import CustomDock from './components/dock/custom-dock'
 import CustomCard from './components/card/custom-card'
 import { BlurFade } from './components/ui/blur-fade'
 import { HeroVideoDialog } from './components/ui/hero-video-dialog'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "./components/ui/carousel"
+import { Button, ConfigProvider, Image, Tooltip } from 'antd';
+import { GithubOutlined, LinkOutlined, TrophyOutlined } from '@ant-design/icons'
+
 
 
 function App() {
   const [count, setCount] = useState(0)
+  const [currentSite, setCurrentSite] = useState(1)
+  const [api, setApi] = useState<CarouselApi>()
+
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+    setCurrentSite(api.selectedScrollSnap() + 1)
+    api.on("select", () => {
+      setCurrentSite(api.selectedScrollSnap() + 1)
+    })
+  }, [api])
+
 
   return (
     <>
+    <ConfigProvider
+      theme={{
+        token: {
+          // colorBgMask: '#0d0a0ae8'
+          // preview
+        },
+        components: {
+          Image: {
+            // previewOperationHoverColor: '#ff0000',
+            colorBgMask: '#0d0a0ae8',
+          },
+          Button: {
+            defaultActiveBorderColor: '#ff0000'
+          }
+        }
+      }}
+    >
     <Particles color="#c9b8cb" className='particles absolute inset-0 z-10' size={1.3}/>
     {/* <img src={catHeader} className='catHeader z-0'></img> */}
 
@@ -58,7 +107,22 @@ function App() {
             thumbnailSrc={harmonicHustle}
             thumbnailAlt="Harmonic Hustle Img"
             />
-          }>
+          }
+          // actions={[
+          //   <Tooltip title="GitHub Repo" key="tooltip">
+          //       <Button 
+          //           type="default" 
+          //           className=""
+          //           style={{padding:'20px', margin:'10px'}}
+          //           icon={
+          //               <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
+          //           }
+          //       >
+          //       </Button>
+          //   </Tooltip>
+          // ]}
+          tags={["C++", "OpenGL", "C"]}
+          >
 
         </CustomCard>
       </BlurFade>
@@ -89,68 +153,205 @@ function App() {
 
       <div className="p-[5vh]"></div>
 
+      {/* PERSONAL WEBSITES-------_ */}
+      <BlurFade delay={0.3} inView
+        offset={30}
+        direction="up">
       <CustomCard 
         title={"Personal Website"}
         description={"test"} 
         className=''
         cover={
-            <img src={catHeader} className='card-img rounded-xl'></img>
+          <>
+            <Carousel className='card-img rounded-xl ' setApi={setApi}>
+            <CarouselContent>
+              <CarouselItem className="flex items-center justify-center">
+                <Image src={websiteV1} className=''/>
+              </CarouselItem>
+              <CarouselItem className="flex items-center justify-center">
+                <Image src={websiteV2} className=''/>
+              </CarouselItem>
+              <CarouselItem className="flex items-center justify-center">
+                <Image src={websiteV3} className=''/>
+              </CarouselItem>
+
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+          <div className="py-2 text-center text-sm text-muted-foreground">
+            {`version ${currentSite}`}
+          </div>
+          </>
           }>
 
       </CustomCard>
+      </BlurFade>
 
       <div className="p-[5vh]"></div>
 
+        {/* ANALYZING STEAM GAMES */}
+      <BlurFade delay={0.3} inView
+        offset={30}
+        direction="up">
       <CustomCard 
         title={"Analyzing Steam Games"}
         description={"test"} 
         className=''
         cover={
-            <img src={catHeader} className='card-img rounded-xl'></img>
-        }>
+            <Image src={steamGames} className='card-img rounded-xl'
+              // preview={{
+              // colorBgBase: "!bg-purple-900/80 !backdrop-blur-md !rounded-full !px-4",
+              // }} 
+              />
+        }
+        actions={[
+            <Tooltip title="GitHub Repo">
+                <Button 
+                    type="default" 
+                    className=""
+                    style={{padding:'20px', margin:'10px'}}
+                    icon={
+                        <GithubOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
+                    }
+                    href="https://github.com/tc2780/Analyzing-Steam-Games" target="_blank" 
+                >
+                </Button>
+            </Tooltip>,
+            <Tooltip title="Featured on 447 Hall of Fame">
+                <Button 
+                    type="default" 
+                    className=""
+                    style={{padding:'20px', margin:'10px'}}
+                    icon={
+                        <TrophyOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
+                    }
+                    href="https://www.students.cs.ubc.ca/~cs-447/25Jan/fame/" target="_blank" 
+                />
+            </Tooltip>,
+            <Tooltip title="Hosted on Vercel" >
+                <Button 
+                    type="default" 
+                    className=""
+                    style={{padding:'20px', margin:'10px'}}
+                    icon={
+                        <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
+                    }
+                    href="https://analyzing-steam-games.vercel.app/" target="_blank" 
+                />
+            </Tooltip>
+          ]}
+        >
 
       </CustomCard>
+      </BlurFade>
 
       <div className="p-[5vh]"></div>
 
+        {/* CAT ANIMATION STUDY */}
+      <BlurFade delay={0.3} inView
+        offset={30}
+        direction="up">
       <CustomCard 
         title={"Cat Animation Study"}
         description={"test"} 
         className=''
         cover={
-            <img src={catHeader} className='card-img rounded-xl'></img>
-        }>
-
+            <HeroVideoDialog 
+              className="block dark:hidden rounded-xl card-img card-video"
+              animationStyle="top-in-bottom-out"
+              videoSrc="https://www.youtube.com/embed/kov8PXBQOxk?si=HEqAxofAVf-k6IE9"
+              thumbnailSrc={catAnimationStudy}
+              thumbnailAlt="Cat Animation Study"
+            />
+        }
+        actions={[
+            <Tooltip title="Hosted on Vercel" >
+                <Button 
+                    type="default" 
+                    className=""
+                    style={{padding:'20px', margin:'10px'}}
+                    icon={
+                        <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
+                    }
+                    href="https://cat-animation-study.vercel.app/" target="_blank" 
+                >
+                </Button>
+            </Tooltip>
+        ]}
+        >
       </CustomCard>
+      </BlurFade>
 
       <div className="p-[5vh]"></div>
 
+        {/* HAUNTED HOUSE STUDY */}
+      <BlurFade delay={0.3} inView
+        offset={30}
+        direction="up">
       <CustomCard 
         title={"Haunted House Study"}
         description={"test"} 
         className=''
         cover={
-            <img src={catHeader} className='card-img rounded-xl'></img>
-        }>
+            <Image src={hauntedHouseStudy} className='card-img rounded-xl'/>
+        }
+        actions={[
+            <Tooltip title="Hosted on Vercel" >
+                <Button 
+                    type="default" 
+                    className=""
+                    style={{padding:'20px', margin:'10px'}}
+                    icon={
+                        <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
+                    }
+                    href="https://haunted-house-study.vercel.app/" target="_blank" 
+                >
+                </Button>
+            </Tooltip>
+        ]}
+        >
 
       </CustomCard>
+      </BlurFade>
 
       <div className="p-[5vh]"></div>
 
+        {/* GALAXY GENERATOR STUDY */}
+      <BlurFade delay={0.3} inView
+        offset={30}
+        direction="up">
       <CustomCard 
         title={"Galaxy Generator Study"}
         description={"test"} 
         className=''
         cover={
-            <img src={catHeader} className='card-img rounded-xl'></img>
-        }>
+            <Image src={galaxyStudy} className='card-img rounded-xl'/>
+        }
+         actions={[
+            <Tooltip title="Hosted on Vercel" >
+                <Button 
+                    type="default" 
+                    className=""
+                    style={{padding:'20px', margin:'10px'}}
+                    icon={
+                        <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
+                    }
+                    href="https://galaxy-study.vercel.app/" target="_blank" 
+                >
+                </Button>
+            </Tooltip>
+        ]}
+        >
 
       </CustomCard>
+      </BlurFade>
     </section>
 
-    <section className="h-[40px]">
+    <section className="h-[20vh]">
       
     </section>
+    </ConfigProvider>
     </> 
   )
 }
