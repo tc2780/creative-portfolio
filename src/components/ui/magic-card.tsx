@@ -77,8 +77,9 @@ export function MagicCard(props: MagicCardProps) {
 
   const isDarkTheme = useMemo(() => {
     if (!mounted) return true
+
     const currentTheme = theme === "system" ? systemTheme : theme
-    return currentTheme === "dark"
+    return currentTheme === "dark" || currentTheme === undefined
   }, [theme, systemTheme, mounted])
 
   const mouseX = useMotionValue(-gradientSize)
@@ -183,7 +184,7 @@ export function MagicCard(props: MagicCardProps) {
         background: cardBackground,
       }}
     >
-      <div className="bg-background absolute inset-px z-20 rounded-[inherit]" />
+      <div className="absolute inset-px z-20 rounded-[inherit] bg-black/20" />
 
       {mode === "gradient" && (
         <motion.div
@@ -212,7 +213,7 @@ export function MagicCard(props: MagicCardProps) {
             filter: `blur(${glowBlur}px)`,
             opacity: orbVisible,
             background: `linear-gradient(${glowAngle}deg, ${glowFrom}, ${glowTo})`,
-
+            boxShadow: `0 0 ${glowBlur * 1.5}px ${glowFrom}, 0 0 ${glowBlur * 2}px ${glowTo}`,
             mixBlendMode: isDarkTheme ? "screen" : "multiply",
             willChange: "transform, opacity",
           }}

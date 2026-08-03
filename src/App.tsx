@@ -28,6 +28,8 @@ import {
 } from "./components/ui/carousel"
 import { Button, ConfigProvider, Image, Tooltip } from 'antd';
 import { GithubOutlined, LinkOutlined, TrophyOutlined } from '@ant-design/icons'
+// import { KineticText } from './components/ui/kinetic-text'
+import { PORTFOLIO_TEXT } from './data/projectDescriptions'
 
 
 
@@ -67,7 +69,7 @@ function App() {
     {/* <img src={catHeader} className='catHeader z-0'></img> */}
 
     <section id="center">
-      <div className='mb-15' style={{
+      <div className='mb-30' style={{
           backgroundImage: `url(${catHeader})`,
           backgroundSize: "cover",
           height: '100vh',
@@ -80,6 +82,14 @@ function App() {
             loop={true}
             >
             </TypingAnimation>
+            {/* <KineticText 
+            as="h1"
+            className="text-white intro-text font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,1)]"
+            text={`hi, i'm Tracy`}/>
+            <KineticText 
+            as="h1"
+            className="text-white intro-text font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,1)]"
+            text={`this is my portfolio`}/> */}
         </div>
         <CustomDock></CustomDock>
       </div>
@@ -133,7 +143,7 @@ function App() {
       >
       <CustomCard 
         title={"The Marble"}
-        description={"test"} 
+        description={PORTFOLIO_TEXT.theMarble.description} 
         className=''
         cover={
             <HeroVideoDialog 
@@ -158,7 +168,7 @@ function App() {
         direction="up">
       <CustomCard 
         title={"Personal Website"}
-        description={"test"} 
+        description={PORTFOLIO_TEXT.personalSite.description} 
         className=''
         cover={
           <>
@@ -197,7 +207,7 @@ function App() {
         direction="up">
       <CustomCard 
         title={"Analyzing Steam Games"}
-        description={"test"} 
+        description={PORTFOLIO_TEXT.steamGames.description} 
         className=''
         cover={
             <Image src={steamGames} className='card-img rounded-xl'
@@ -256,7 +266,7 @@ function App() {
         direction="up">
       <CustomCard 
         title={"Cat Animation Study"}
-        description={"test"} 
+        description={PORTFOLIO_TEXT.catStudy.description} 
         className=''
         cover={
             <HeroVideoDialog 
@@ -294,7 +304,7 @@ function App() {
         direction="up">
       <CustomCard 
         title={"Haunted House Study"}
-        description={"test"} 
+        description={PORTFOLIO_TEXT.hauntedHouseStudy.description} 
         className=''
         cover={
             <Image src={hauntedHouseStudy} className='card-img rounded-xl'/>
@@ -327,7 +337,7 @@ function App() {
         direction="up">
       <CustomCard 
         title={"Galaxy Generator Study"}
-        description={"test"} 
+        description={PORTFOLIO_TEXT.galaxyStudy.description} 
         className=''
         cover={
             <Image src={galaxyStudy} className='card-img rounded-xl'/>

@@ -41,8 +41,12 @@ function CustomCard(props: CardProps) {
     >
          <MagicCard
             className="custom-magic-card p-0 shadow-none relative overflow-hidden rounded-xl text-white"
-            gradientColor="#6f157b"
-            mode="gradient"
+            // gradientColor="#6f157b"
+            // gradientColor="#6f157b"
+            mode="orb"
+            glowFrom="#ee00ff"
+            glowTo="#3300ff"
+            glowOpacity={0.2}
             gradientSize={250}
         >
             <Card title="test" 

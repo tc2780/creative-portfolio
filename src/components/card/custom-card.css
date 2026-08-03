@@ -2,6 +2,7 @@
     background-color: rgba(44, 12, 61, 0.189);
     /* color: white; */
     width: 75vw;
+    max-width: 1000px;
     padding: 20px;
     height: fit-content;
 
@@ -24,6 +25,7 @@
 
 .card-img {
     width: 50vw !important;
+    max-width: 800px;
     align-self: center;
 }
 

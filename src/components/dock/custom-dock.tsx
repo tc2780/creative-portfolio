@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { Dock, DockIcon } from '../ui/dock'
 import {HomeOutlined, GithubOutlined, LinkedinFilled, MailFilled} from '@ant-design/icons'
 import './custom-dock.css'
@@ -12,24 +11,6 @@ const Icons = {
 
 
 function CustomDock() {
-  const [isSticky, setIsSticky] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Trigger sticky state after scrolling down 300px
-      if (window.scrollY > window.innerHeight * 0.75) {
-        setIsSticky(true)
-        console.log('HERE')
-      } else {
-        setIsSticky(false)
-      }
-    }
-    console.log('TEST')
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-  
   const dockData = {
      navbar: [
     { href: "#", icon: Icons.home, label: "Home" },
