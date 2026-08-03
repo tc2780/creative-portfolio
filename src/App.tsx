@@ -333,7 +333,7 @@ function App() {
       </BlurFade>
     </section>
 
-    <section className="h-[20vh] relative flex-col text-[ghostwhite] text-[15px] text-center p-5">
+    <section className="h-[20vh] relative flex-col text-[ghostwhite] text-[15px] text-center p-[20px] mb-[10px] mt-[30px]">
       <br />
         {`
           Designed and Developed by Tracy Chow

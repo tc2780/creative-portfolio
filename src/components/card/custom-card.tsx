@@ -30,9 +30,9 @@ function CustomCard(props: CardProps) {
         components: {
           Button: {
             defaultBorderColor: 'transparent',
-            defaultBg: '#28092e',
+            defaultBg: '#5c3680',
             defaultHoverBorderColor: 'transparent',
-            defaultHoverBg: '#671084'
+            defaultHoverBg: '#41235c'
           }
         }
       }}
@@ -41,10 +41,14 @@ function CustomCard(props: CardProps) {
       }}
     >
         <Backlight blur={20} className="">
+         {/* <MagicCard
+            className="custom-magic-card p-0 shadow-none relative overflow-hidden rounded-xl text-white"
+            gradientColor="#7b1460e8"
+            mode="gradient"
+            gradientSize={250}
+        > */}
          <MagicCard
             className="custom-magic-card p-0 shadow-none relative overflow-hidden rounded-xl text-white"
-            // gradientColor="#6f157b"
-            // gradientColor="#6f157b"
             mode="orb"
             glowFrom="#ee00ff"
             glowTo="#3300ff"

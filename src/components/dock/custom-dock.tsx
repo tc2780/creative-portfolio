@@ -19,7 +19,7 @@ function CustomDock() {
       social: {
         GitHub: {
           name: "GitHub",
-          url: "https://github.com/tc2780",
+          url: "https://github.com/tc2780/creative-portfolio",
           icon: Icons.github,
         },
         LinkedIn: {
