@@ -6,7 +6,7 @@ export const PORTFOLIO_TEXT = {
         description: "A 2D animation created frame by frame for a capstone project, and one of my first forays into the medium. As the main characters and objects in this story are all inherently rigid and immobile, I focused on conveying the story purely through deliberate stagins, limited actions, character facial expressions and timing."
     },
     personalSite: {
-        description: "My current personal website, built with React and TypeScript, guides users through my background in a linear narrative format. It features my technical and creative projects sequentially as users navigate the site, carefully pacing the sections and available information so users stay engages without feeling overwhelmed or confused."
+        description: "My current personal website, built with React and TypeScript, guides users through my background in a linear narrative format. It features my technical and creative projects sequentially as users navigate the site, carefully pacing the sections and available information so users stay engages without feeling overwhelmed or confused. Users are also able to easily navigate through a full archive of my previous technical projects in a simplified format."
     },
     steamGames: {
         description: "Developed for UBC’s CPSC 447: Intro to Visualization course. As a team of 4, we utilized D3 and JavaScript to create interactive, data-driven visualizations designed for deep user exploration. I led the visual design and user interaction, focusing on creating intuitive UX while having cohesive themes and consistent layout across the charts."

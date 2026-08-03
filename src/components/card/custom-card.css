@@ -5,22 +5,12 @@
     max-width: 1000px;
     padding: 20px;
     height: fit-content;
+    
 
 }
 
 .custom-magic-card {
-    /* border: 5px;
-    border-color: red; */
-    /* border: none; */
-    /* padding: 0px; */
-    /* border-radius: 20px; */
-    /* border: 15px solid transparent !important;
-
-    border-radius: 20px; */
-    /* background-color: rgba(158, 34, 208, 0.25) !important; */
-    /* backdrop-filter: blur(8px); */
-    /* padding: 0;
-    margin: 0; */
+    border-width: 3px;
 }
 
 .card-img {
@@ -33,6 +23,13 @@
     border-color: transparent;
 }
 
+.card-description {
+    width: 45vw;
+    max-width: 700px;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+}
+
 .custom-tag {
     font-size: 15px;
     color: white;
@@ -42,7 +39,4 @@
     margin: 5px 0px 5px 10px;
     font-family: inherit;
     height: fit-content;
-    /* height: 33px */
-    /* box-shadow: 0px 0px 2px black; */
-    /* margin-top: 10px */
 }

@@ -27,26 +27,27 @@ import {
   type CarouselApi,
 } from "./components/ui/carousel"
 import { Button, ConfigProvider, Image, Tooltip } from 'antd';
-import { GithubOutlined, LinkOutlined, TrophyOutlined } from '@ant-design/icons'
+import { GithubFilled, GithubOutlined, LinkOutlined, TrophyOutlined } from '@ant-design/icons'
 // import { KineticText } from './components/ui/kinetic-text'
 import { PORTFOLIO_TEXT } from './data/projectDescriptions'
+import { KineticText } from './components/ui/kinetic-text'
+import { TypewriterText } from './components/ui/typewriter'
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [currentSite, setCurrentSite] = useState(1)
-  const [api, setApi] = useState<CarouselApi>()
+  // const [currentSite, setCurrentSite] = useState(1)
+  // const [api, setApi] = useState<CarouselApi>()
 
-  useEffect(() => {
-    if (!api) {
-      return
-    }
-    setCurrentSite(api.selectedScrollSnap() + 1)
-    api.on("select", () => {
-      setCurrentSite(api.selectedScrollSnap() + 1)
-    })
-  }, [api])
+  // useEffect(() => {
+  //   if (!api) {
+  //     return
+  //   }
+  //   setCurrentSite(api.selectedScrollSnap() + 1)
+  //   api.on("select", () => {
+  //     setCurrentSite(api.selectedScrollSnap() + 1)
+  //   })
+  // }, [api])
 
 
   return (
@@ -54,19 +55,15 @@ function App() {
     <ConfigProvider
       theme={{
         token: {
-          // colorBgMask: '#0d0a0ae8'
-          // preview
         },
         components: {
           Image: {
-            // previewOperationHoverColor: '#ff0000',
             colorBgMask: '#0d0a0ae8',
           }
         }
       }}
     >
     <Particles color="#c9b8cb" className='particles absolute inset-0 z-10' size={1.3}/>
-    {/* <img src={catHeader} className='catHeader z-0'></img> */}
 
     <section id="center">
       <div className='mb-30' style={{
@@ -78,23 +75,23 @@ function App() {
         <div className="hero-text width-auto content-normal z-20">
           <TypingAnimation className="text-white intro-text font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,1)]"
             words={["hi, i'm Tracy", "this is my portfolio"]}
+            // words={[`hi, i'm Tracy\nthis is my portfolio`]}
             cursorStyle='underscore'
             loop={true}
             >
             </TypingAnimation>
             {/* <KineticText 
-            as="h1"
-            className="text-white intro-text font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,1)]"
+            className="text-white intro-text  drop-shadow-[0_4px_4px_rgba(0,0,0,1)]"
             text={`hi, i'm Tracy`}/>
             <KineticText 
-            as="h1"
-            className="text-white intro-text font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,1)]"
+            className="text-white intro-text  drop-shadow-[0_4px_4px_rgba(0,0,0,1)]"
             text={`this is my portfolio`}/> */}
+            {/* <TypewriterText 
+              text={`hi, i'm Tracy this is my portfolio`}
+            /> */}
         </div>
         <CustomDock></CustomDock>
       </div>
-
-      {/* <div className="height-[20px]"></div> */}
 
 
       {/* HARMONIC HUSTLE --------*/}
@@ -104,7 +101,7 @@ function App() {
       >
         <CustomCard 
           title={"Harmonic Hustle"}
-          description={"test"} 
+          description={PORTFOLIO_TEXT.haronicHustle.description} 
           className=''
           cover={
             <HeroVideoDialog 
@@ -115,19 +112,6 @@ function App() {
             thumbnailAlt="Harmonic Hustle Img"
             />
           }
-          // actions={[
-          //   <Tooltip title="GitHub Repo" key="tooltip">
-          //       <Button 
-          //           type="default" 
-          //           className=""
-          //           style={{padding:'20px', margin:'10px'}}
-          //           icon={
-          //               <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
-          //           }
-          //       >
-          //       </Button>
-          //   </Tooltip>
-          // ]}
           tags={["C++", "OpenGL", "C"]}
           >
 
@@ -171,29 +155,34 @@ function App() {
         description={PORTFOLIO_TEXT.personalSite.description} 
         className=''
         cover={
-          <>
-            <Carousel className='card-img rounded-xl ' setApi={setApi}>
-            <CarouselContent>
-              <CarouselItem className="flex items-center justify-center">
-                <Image src={websiteV1} className=''/>
-              </CarouselItem>
-              <CarouselItem className="flex items-center justify-center">
-                <Image src={websiteV2} className=''/>
-              </CarouselItem>
-              <CarouselItem className="flex items-center justify-center">
-                <Image src={websiteV3} className=''/>
-              </CarouselItem>
-
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-          <div className="py-2 text-center text-sm text-muted-foreground">
-            {`version ${currentSite}`}
-          </div>
-          </>
-          }
-          tags={["React", "TypeScript"]}
+          <Image src={websiteV2} className='card-img rounded-xl'/>
+        }
+        actions={[
+            <Tooltip title="Personal Website" key="steam-repo">
+                <Button 
+                    type="default" 
+                    className=""
+                    style={{padding:'20px', margin:'10px'}}
+                    icon={
+                        <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
+                    }
+                    href="https://tc2780.netlify.app/" target="_blank" 
+                >
+                </Button>
+            </Tooltip>,
+            <Tooltip title="Github repo" key="steam-hof">
+                <Button 
+                    type="default" 
+                    className=""
+                    style={{padding:'20px', margin:'10px'}}
+                    icon={
+                        <GithubOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
+                    }
+                    href="https://github.com/tc2780/Personal-Website-v2" target="_blank" 
+                />
+            </Tooltip>,
+        ]}
+        tags={["React", "TypeScript"]}
           >
 
       </CustomCard>
@@ -210,11 +199,7 @@ function App() {
         description={PORTFOLIO_TEXT.steamGames.description} 
         className=''
         cover={
-            <Image src={steamGames} className='card-img rounded-xl'
-              // preview={{
-              // colorBgBase: "!bg-purple-900/80 !backdrop-blur-md !rounded-full !px-4",
-              // }} 
-              />
+            <Image src={steamGames} className='card-img rounded-xl'/>
         }
         actions={[
             <Tooltip title="GitHub Repo" key="steam-repo">
@@ -363,8 +348,23 @@ function App() {
       </BlurFade>
     </section>
 
-    <section className="h-[20vh]">
-      
+    <section className="h-[20vh] relative flex-col text-[ghostwhite] text-[15px] text-center p-5">
+      <br />
+        {`
+          Designed and Developed by Tracy Chow
+        `}
+        <br />
+          {`
+            Copyright © 2026 Tracy Chow
+          `}
+          <br />
+          <Button 
+            ghost 
+            style={{border: "none", paddingTop: '10px',}}
+            href="https://github.com/tc2780/Personal-Website-v2"
+            target="_blank"
+            icon={<GithubFilled style={{fontSize: "25px", paddingTop: "5px", color: "ghostwhite"}} />}
+          />
     </section>
     </ConfigProvider>
     </> 

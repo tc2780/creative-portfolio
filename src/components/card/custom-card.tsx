@@ -7,6 +7,7 @@ import {ConfigProvider, Tag } from 'antd';
 
 // import catHeader from '../../assets/catHeader.png'
 // import { Button } from '../ui/button';
+import { Backlight } from '../ui/backlight';
 
 export interface CardProps {
     title?: string,
@@ -39,6 +40,7 @@ function CustomCard(props: CardProps) {
         unique: true,
       }}
     >
+        <Backlight blur={20} className="">
          <MagicCard
             className="custom-magic-card p-0 shadow-none relative overflow-hidden rounded-xl text-white"
             // gradientColor="#6f157b"
@@ -73,6 +75,7 @@ function CustomCard(props: CardProps) {
                 </CardContent>
             </Card>
         </MagicCard>
+        </Backlight>
     </ConfigProvider>
     </>
   )
