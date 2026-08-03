@@ -1,15 +1,11 @@
-import { useEffect, useState } from 'react'
 import catHeader from './assets/catHeader.png'
 import harmonicHustle from './assets/harmonic-hustle.png'
 import theMarble from './assets/theMarble.png'
-import websiteV1 from './assets/websiteV1.png'
 import websiteV2 from './assets/websiteV2.png'
-import websiteV3 from './assets/websiteV3.png'
 import steamGames from './assets/analyzingSteamGames.png'
 import catAnimationStudy from './assets/catAnimationStudy.png'
 import hauntedHouseStudy from './assets/hauntedHouseStudy.png'
 import galaxyStudy from './assets/galaxyStudy.png'
-
 
 import './App.css'
 import { Particles } from './components/ui/particles'
@@ -18,20 +14,9 @@ import CustomDock from './components/dock/custom-dock'
 import CustomCard from './components/card/custom-card'
 import { BlurFade } from './components/ui/blur-fade'
 import { HeroVideoDialog } from './components/ui/hero-video-dialog'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "./components/ui/carousel"
 import { Button, ConfigProvider, Image, Tooltip } from 'antd';
 import { GithubFilled, GithubOutlined, LinkOutlined, TrophyOutlined } from '@ant-design/icons'
-// import { KineticText } from './components/ui/kinetic-text'
 import { PORTFOLIO_TEXT } from './data/projectDescriptions'
-import { KineticText } from './components/ui/kinetic-text'
-import { TypewriterText } from './components/ui/typewriter'
 
 
 

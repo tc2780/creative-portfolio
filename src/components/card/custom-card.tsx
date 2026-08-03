@@ -1,6 +1,6 @@
 // import { Card } from 'antd';
 import { MagicCard } from '../ui/magic-card';
-import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
+import { Card, CardAction, CardContent } from '../ui/card';
 import './custom-card.css'
 import {ConfigProvider, Tag } from 'antd';
 // import { GithubOutlined } from '@ant-design/icons';
