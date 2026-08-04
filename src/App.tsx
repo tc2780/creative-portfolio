@@ -17,6 +17,8 @@ import { HeroVideoDialog } from './components/ui/hero-video-dialog'
 import { Button, ConfigProvider, Image, Tooltip } from 'antd';
 import { GithubFilled, GithubOutlined, LinkOutlined, TrophyOutlined } from '@ant-design/icons'
 import { PORTFOLIO_TEXT } from './data/projectDescriptions'
+import { ScrollProgress } from './components/ui/scroll-progress'
+import { LightRays } from './components/ui/light-rays'
 
 
 
@@ -48,10 +50,17 @@ function App() {
         }
       }}
     >
-    <Particles color="#c9b8cb" className='particles absolute inset-0 z-10' size={1.3}/>
-
-    <section id="center">
-      <div className='mb-30' style={{
+    <Particles color="#c9b8cbb5" className='particles absolute inset-0 z-10' size={2}
+      quantity={50}/>
+    <ScrollProgress className='h-[2px] opacity-90'/>
+    <section id="center" className="relative overflow-visible">
+        <LightRays count={5}
+        color="rgba(255, 191, 0, 0.47)"
+        length="150vh"
+        className="pointer-events-none absolute left-0 right-0 top-0 z-20"
+        // blur={1}
+      />
+      <div className='mb-30 relative overflow-visible' style={{
           backgroundImage: `url(${catHeader})`,
           backgroundSize: "cover",
           height: '100vh',

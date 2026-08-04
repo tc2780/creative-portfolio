@@ -55,7 +55,7 @@ function CustomCard(props: CardProps) {
             glowOpacity={0.2}
             gradientSize={250}
         >
-            <Card title="test" 
+            <Card title={props.title || "test"} 
                 className={`custom-card border-none bg-transparent p-0 shadow-none ring-0 text-white ${props.className}`}
             >
                 <CardContent className="relative flex flex-col items-center">
