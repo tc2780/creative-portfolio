@@ -107,6 +107,20 @@ function App() {
             />
           }
           tags={["C++", "OpenGL", "C"]}
+          actions={[
+            <Tooltip title="Featured on CPSC 427 Page" key="harmonic-hustle">
+                <Button 
+                    type="default" 
+                    className=""
+                    style={{padding:'20px', margin:'10px'}}
+                    icon={
+                        <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
+                    }
+                    href="https://www.students.cs.ubc.ca/~cs-427/games" target="_blank" 
+                >
+                </Button>
+            </Tooltip>
+        ]}
           >
 
         </CustomCard>
