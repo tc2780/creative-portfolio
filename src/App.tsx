@@ -11,10 +11,7 @@ import './App.css'
 import { Particles } from './components/ui/particles'
 import { TypingAnimation } from "./components/ui/typing-animation"
 import CustomDock from './components/dock/custom-dock'
-import CustomCard from './components/card/custom-card'
-import { BlurFade } from './components/ui/blur-fade'
-import { HeroVideoDialog } from './components/ui/hero-video-dialog'
-import { Button, ConfigProvider, Image, Tooltip } from 'antd';
+import { Button, ConfigProvider } from 'antd';
 import { GithubFilled, GithubOutlined, LinkOutlined, TrophyOutlined } from '@ant-design/icons'
 import { PORTFOLIO_TEXT } from './data/projectDescriptions'
 import { ScrollProgress } from './components/ui/scroll-progress'
@@ -104,7 +101,7 @@ function App() {
 
       {/* HARMONIC HUSTLE --------*/}
       <ProjectCard 
-        title="Harmonic Hustle"
+        title={PORTFOLIO_TEXT.harmonicHustle.title}
         description={PORTFOLIO_TEXT.harmonicHustle.description}
         coverType="vid"
         coverVidSrc="https://www.youtube.com/embed/sxc7f5nW0wo?si=k409saNgVwFt9UnS"
@@ -123,7 +120,7 @@ function App() {
 
       {/* THE MARBLE-------- */}
       <ProjectCard 
-        title="The Marble"
+        title={PORTFOLIO_TEXT.theMarble.title}
         description={PORTFOLIO_TEXT.theMarble.description}
         coverType="vid"
         coverVidSrc="https://www.youtube.com/embed/500GanMZ2O0?si=KyZ4BzIl5LDcCsuT"
@@ -136,7 +133,7 @@ function App() {
 
       {/* PERSONAL WEBSITES-------_ */}
       <ProjectCard 
-        title="Personal Website"
+        title={PORTFOLIO_TEXT.personalSite.title}
         description={PORTFOLIO_TEXT.personalSite.description}
         coverType="img"
         coverImgSrc={websiteV2}
@@ -158,7 +155,7 @@ function App() {
 
       {/* ANALYZING STEAM GAMES */}
       <ProjectCard
-        title="Analyzing Steam Games"
+        title={PORTFOLIO_TEXT.steamGames.title}
         description={PORTFOLIO_TEXT.steamGames.description} 
         coverType='img'
         coverImgSrc={steamGames}
@@ -185,7 +182,7 @@ function App() {
 
       {/* CAT ANIMATION STUDY */}
       <ProjectCard
-        title="Cat Animation Study"
+        title={PORTFOLIO_TEXT.catStudy.title}
         description={PORTFOLIO_TEXT.catStudy.description} 
         coverType='vid'
         coverVidSrc='https://www.youtube.com/embed/kov8PXBQOxk?si=HEqAxofAVf-k6IE9'
@@ -204,7 +201,7 @@ function App() {
 
       {/* HAUNTED HOUSE STUDY */}
       <ProjectCard
-        title="Haunted House Study"
+        title={PORTFOLIO_TEXT.hauntedHouseStudy.title}
         description={PORTFOLIO_TEXT.hauntedHouseStudy.description} 
         coverType='img'
         coverImgSrc={hauntedHouseStudy}
@@ -221,7 +218,7 @@ function App() {
 
       {/* GALAXY GENERATOR STUDY */}
       <ProjectCard
-        title="Galaxy Generator Study"
+        title={PORTFOLIO_TEXT.galaxyStudy.title}
         description={PORTFOLIO_TEXT.galaxyStudy.description} 
         coverType='img'
         coverImgSrc={galaxyStudy}
