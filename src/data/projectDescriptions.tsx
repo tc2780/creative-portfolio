@@ -1,5 +1,5 @@
 export const PORTFOLIO_TEXT = {
-    haronicHustle: {
+    harmonicHustle: {
         description: "Designed and developed in a small team of 5 for the CPSC 427: Video Game Programming course at UBC. My work focused on engineering core game flow and state transitions, developing enemy pathfinding algorithms, and designing intuitive user interactions. Furthermore, we implemented simple custom shaders and a particle system for trail effects using C++ and OpenGL."
     },
     theMarble: {

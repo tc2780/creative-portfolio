@@ -19,23 +19,15 @@ import { GithubFilled, GithubOutlined, LinkOutlined, TrophyOutlined } from '@ant
 import { PORTFOLIO_TEXT } from './data/projectDescriptions'
 import { ScrollProgress } from './components/ui/scroll-progress'
 import { LightRays } from './components/ui/light-rays'
+import ProjectCard from './components/project-card/project-card'
 
-
+const ICONS = {
+  link: <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>,
+  github: <GithubOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>,
+  trophy: <TrophyOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
+}
 
 function App() {
-  // const [currentSite, setCurrentSite] = useState(1)
-  // const [api, setApi] = useState<CarouselApi>()
-
-  // useEffect(() => {
-  //   if (!api) {
-  //     return
-  //   }
-  //   setCurrentSite(api.selectedScrollSnap() + 1)
-  //   api.on("select", () => {
-  //     setCurrentSite(api.selectedScrollSnap() + 1)
-  //   })
-  // }, [api])
-
 
   return (
     <>
@@ -74,286 +66,173 @@ function App() {
             loop={true}
             >
             </TypingAnimation>
-            {/* <KineticText 
-            className="text-white intro-text  drop-shadow-[0_4px_4px_rgba(0,0,0,1)]"
-            text={`hi, i'm Tracy`}/>
-            <KineticText 
-            className="text-white intro-text  drop-shadow-[0_4px_4px_rgba(0,0,0,1)]"
-            text={`this is my portfolio`}/> */}
-            {/* <TypewriterText 
-              text={`hi, i'm Tracy this is my portfolio`}
-            /> */}
         </div>
         <CustomDock></CustomDock>
       </div>
 
-
-      {/* HARMONIC HUSTLE --------*/}
-      <BlurFade delay={0.3} inView
-        offset={30}
-        direction="up"
-      >
-        <CustomCard 
-          title={"Harmonic Hustle"}
-          description={PORTFOLIO_TEXT.haronicHustle.description} 
-          className=''
-          cover={
-            <HeroVideoDialog 
-            className="block dark:hidden rounded-xl card-img card-video"
-            animationStyle="top-in-bottom-out"
-            videoSrc="https://www.youtube.com/embed/sxc7f5nW0wo?si=k409saNgVwFt9UnS"
-            thumbnailSrc={harmonicHustle}
-            thumbnailAlt="Harmonic Hustle Img"
-            />
-          }
-          tags={["C++", "OpenGL", "C"]}
-          actions={[
-            <Tooltip title="Featured on CPSC 427 Page" key="harmonic-hustle">
-                <Button 
-                    type="default" 
-                    className=""
-                    style={{padding:'20px', margin:'10px'}}
-                    icon={
-                        <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
-                    }
-                    href="https://www.students.cs.ubc.ca/~cs-427/games" target="_blank" 
-                >
-                </Button>
-            </Tooltip>
-        ]}
-          >
-
-        </CustomCard>
-      </BlurFade>
+      {/* NEW PROJECT ---------- */}
+      <ProjectCard
+        title="Maya Village Generator"
+        description="testDes"
+        coverType='img'
+        coverImgSrc={websiteV2}
+        actions={[{
+          title: 'test',
+          key: 'test',
+          icon: ICONS.github,
+          link: 'https://www.students.cs.ubc.ca/~cs-427/games'
+        }]}
+      />
 
       <div className="p-[5vh]"></div>
 
-        {/* THE MARBLE-------- */}
-      <BlurFade delay={0.3} inView
-        offset={30}
-        direction="up"
-      >
-      <CustomCard 
-        title={"The Marble"}
-        description={PORTFOLIO_TEXT.theMarble.description} 
-        className=''
-        cover={
-            <HeroVideoDialog 
-            className="block dark:hidden rounded-xl card-img card-video"
-            animationStyle="top-in-bottom-out"
-            videoSrc="https://www.youtube.com/embed/500GanMZ2O0?si=KyZ4BzIl5LDcCsuT"
-            thumbnailSrc={theMarble}
-            thumbnailAlt="The Marble Img"
-            />
-          }
-          tags={["2D Animation"]}
-          >
+      {/* WALK CYCLE STUDY-------- */}
+      <ProjectCard
+        title="Maya Walk Cycle Study"
+        description="testDes"
+        coverType='img'
+        coverImgSrc={websiteV2}
+        actions={[{
+          title: 'test',
+          key: 'test',
+          icon: ICONS.github,
+          link: 'https://www.students.cs.ubc.ca/~cs-427/games'
+        }]}
+      />
 
-      </CustomCard>
-      </BlurFade>
+      <div className="p-[5vh]"></div>
+
+      {/* HARMONIC HUSTLE --------*/}
+      <ProjectCard 
+        title="Harmonic Hustle"
+        description={PORTFOLIO_TEXT.harmonicHustle.description}
+        coverType="vid"
+        coverVidSrc="https://www.youtube.com/embed/sxc7f5nW0wo?si=k409saNgVwFt9UnS"
+        thumbnailSrc={harmonicHustle}
+        thumbnailAlt="Harmonic Hustle Img"
+        actions={[{
+          title: "Featured on CPSC 427 Page",
+          key: "harmonic-hustle",
+          icon: ICONS.link,
+          link: "https://www.students.cs.ubc.ca/~cs-427/games"
+        }]}
+        tags={["C++", "OpenGL", "C"]}
+      />
+
+      <div className="p-[5vh]"></div>
+
+      {/* THE MARBLE-------- */}
+      <ProjectCard 
+        title="The Marble"
+        description={PORTFOLIO_TEXT.theMarble.description}
+        coverType="vid"
+        coverVidSrc="https://www.youtube.com/embed/500GanMZ2O0?si=KyZ4BzIl5LDcCsuT"
+        thumbnailSrc={theMarble}
+        thumbnailAlt="The Marble Img"
+        tags={["2D Animation"]}
+      />
 
       <div className="p-[5vh]"></div>
 
       {/* PERSONAL WEBSITES-------_ */}
-      <BlurFade delay={0.3} inView
-        offset={30}
-        direction="up">
-      <CustomCard 
-        title={"Personal Website"}
-        description={PORTFOLIO_TEXT.personalSite.description} 
-        className=''
-        cover={
-          <Image src={websiteV2} className='card-img rounded-xl'/>
-        }
-        actions={[
-            <Tooltip title="Personal Website" key="steam-repo">
-                <Button 
-                    type="default" 
-                    className=""
-                    style={{padding:'20px', margin:'10px'}}
-                    icon={
-                        <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
-                    }
-                    href="https://tc2780.netlify.app/" target="_blank" 
-                >
-                </Button>
-            </Tooltip>,
-            <Tooltip title="Github repo" key="steam-hof">
-                <Button 
-                    type="default" 
-                    className=""
-                    style={{padding:'20px', margin:'10px'}}
-                    icon={
-                        <GithubOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
-                    }
-                    href="https://github.com/tc2780/Personal-Website-v2" target="_blank" 
-                />
-            </Tooltip>,
-        ]}
+      <ProjectCard 
+        title="Personal Website"
+        description={PORTFOLIO_TEXT.personalSite.description}
+        coverType="img"
+        coverImgSrc={websiteV2}
+        actions={[{
+          title: "Personal Website",
+          key: "site",
+          icon: ICONS.link,
+          link: "https://tc2780.netlify.app/"
+        }, {
+          title: "Github repo",
+          key: "site-repo",
+          icon: ICONS.github,
+          link: "https://github.com/tc2780/Personal-Website-v2"
+        }]}
         tags={["React", "TypeScript"]}
-          >
-
-      </CustomCard>
-      </BlurFade>
+      />
 
       <div className="p-[5vh]"></div>
 
-        {/* ANALYZING STEAM GAMES */}
-      <BlurFade delay={0.3} inView
-        offset={30}
-        direction="up">
-      <CustomCard 
-        title={"Analyzing Steam Games"}
+      {/* ANALYZING STEAM GAMES */}
+      <ProjectCard
+        title="Analyzing Steam Games"
         description={PORTFOLIO_TEXT.steamGames.description} 
-        className=''
-        cover={
-            <Image src={steamGames} className='card-img rounded-xl'/>
-        }
-        actions={[
-            <Tooltip title="GitHub Repo" key="steam-repo">
-                <Button 
-                    type="default" 
-                    className=""
-                    style={{padding:'20px', margin:'10px'}}
-                    icon={
-                        <GithubOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
-                    }
-                    href="https://github.com/tc2780/Analyzing-Steam-Games" target="_blank" 
-                >
-                </Button>
-            </Tooltip>,
-            <Tooltip title="Featured on 447 Hall of Fame" key="steam-hof">
-                <Button 
-                    type="default" 
-                    className=""
-                    style={{padding:'20px', margin:'10px'}}
-                    icon={
-                        <TrophyOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
-                    }
-                    href="https://www.students.cs.ubc.ca/~cs-447/25Jan/fame/" target="_blank" 
-                />
-            </Tooltip>,
-            <Tooltip title="Hosted on Vercel" key="steam-link">
-                <Button 
-                    type="default" 
-                    className=""
-                    style={{padding:'20px', margin:'10px'}}
-                    icon={
-                        <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
-                    }
-                    href="https://analyzing-steam-games.vercel.app/" target="_blank" 
-                />
-            </Tooltip>
-          ]}
-          tags={["D3", "HTML", "CSS", "JS"]}
-        >
-
-      </CustomCard>
-      </BlurFade>
+        coverType='img'
+        coverImgSrc={steamGames}
+        actions={[{
+          title: 'GitHub Repo',
+          key: 'steam-repo',
+          icon: ICONS.github,
+          link: 'https://github.com/tc2780/Analyzing-Steam-Games'
+        }, {
+          title: 'Featured on 447 Hall of Fame',
+          key: 'steam-hhof',
+          icon: ICONS.trophy,
+          link: 'https://www.students.cs.ubc.ca/~cs-447/25Jan/fame/'
+        }, {
+          title: 'Hosted on Vercel',
+          key: 'steam-link',
+          icon: ICONS.link,
+          link: 'https://analyzing-steam-games.vercel.app/'
+        }]}
+        tags={["D3", "HTML", "CSS", "JS"]}
+      />
 
       <div className="p-[5vh]"></div>
 
-        {/* CAT ANIMATION STUDY */}
-      <BlurFade delay={0.3} inView
-        offset={30}
-        direction="up">
-      <CustomCard 
-        title={"Cat Animation Study"}
+      {/* CAT ANIMATION STUDY */}
+      <ProjectCard
+        title="Cat Animation Study"
         description={PORTFOLIO_TEXT.catStudy.description} 
-        className=''
-        cover={
-            <HeroVideoDialog 
-              className="block dark:hidden rounded-xl card-img card-video"
-              animationStyle="top-in-bottom-out"
-              videoSrc="https://www.youtube.com/embed/kov8PXBQOxk?si=HEqAxofAVf-k6IE9"
-              thumbnailSrc={catAnimationStudy}
-              thumbnailAlt="Cat Animation Study"
-            />
-        }
-        actions={[
-            <Tooltip title="Hosted on Vercel" key="cat-link">
-                <Button 
-                    type="default" 
-                    className=""
-                    style={{padding:'20px', margin:'10px'}}
-                    icon={
-                        <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
-                    }
-                    href="https://cat-animation-study.vercel.app/" target="_blank" 
-                >
-                </Button>
-            </Tooltip>
-        ]}
+        coverType='vid'
+        coverVidSrc='https://www.youtube.com/embed/kov8PXBQOxk?si=HEqAxofAVf-k6IE9'
+        thumbnailSrc={catAnimationStudy}
+        thumbnailAlt="Cat Animation Study"
+        actions={[{
+          title: 'Hosted on Vercel',
+          key: 'cat-link',
+          icon: ICONS.link,
+          link: 'https://cat-animation-study.vercel.app/'
+        }]}
         tags={["OpenGL", "JS"]}
-        >
-      </CustomCard>
-      </BlurFade>
+      />
 
       <div className="p-[5vh]"></div>
 
-        {/* HAUNTED HOUSE STUDY */}
-      <BlurFade delay={0.3} inView
-        offset={30}
-        direction="up">
-      <CustomCard 
-        title={"Haunted House Study"}
+      {/* HAUNTED HOUSE STUDY */}
+      <ProjectCard
+        title="Haunted House Study"
         description={PORTFOLIO_TEXT.hauntedHouseStudy.description} 
-        className=''
-        cover={
-            <Image src={hauntedHouseStudy} className='card-img rounded-xl'/>
-        }
-        actions={[
-            <Tooltip title="Hosted on Vercel" key="house-link">
-                <Button 
-                    type="default" 
-                    className=""
-                    style={{padding:'20px', margin:'10px'}}
-                    icon={
-                        <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
-                    }
-                    href="https://haunted-house-study.vercel.app/" target="_blank" 
-                >
-                </Button>
-            </Tooltip>
-        ]}
+        coverType='img'
+        coverImgSrc={hauntedHouseStudy}
+        actions={[{
+          title: 'Hosted on Vercel',
+          key: 'house-link',
+          icon: ICONS.link,
+          link: "https://haunted-house-study.vercel.app/"
+        }]}
         tags={["ThreeJS", "JS"]}
-        >
-
-      </CustomCard>
-      </BlurFade>
+      />
 
       <div className="p-[5vh]"></div>
 
-        {/* GALAXY GENERATOR STUDY */}
-      <BlurFade delay={0.3} inView
-        offset={30}
-        direction="up">
-      <CustomCard 
-        title={"Galaxy Generator Study"}
+      {/* GALAXY GENERATOR STUDY */}
+      <ProjectCard
+        title="Galaxy Generator Study"
         description={PORTFOLIO_TEXT.galaxyStudy.description} 
-        className=''
-        cover={
-            <Image src={galaxyStudy} className='card-img rounded-xl'/>
-        }
-         actions={[
-            <Tooltip title="Hosted on Vercel" key="galaxy-link">
-                <Button 
-                    type="default" 
-                    className=""
-                    style={{padding:'20px', margin:'10px'}}
-                    icon={
-                        <LinkOutlined className="" style={{fontSize: "25px", color:"#efe3f2"}}/>
-                    }
-                    href="https://galaxy-study.vercel.app/" target="_blank" 
-                >
-                </Button>
-            </Tooltip>
-        ]}
+        coverType='img'
+        coverImgSrc={galaxyStudy}
+        actions={[{
+          title: 'Hosted on Vercel',
+          key: 'galaxy-link',
+          icon: ICONS.link,
+          link: "https://galaxy-study.vercel.app/"
+        }]}
         tags={["ThreeJS", "JS"]}
-        >
-
-      </CustomCard>
-      </BlurFade>
+      />
     </section>
 
     <section className="h-[20vh] relative flex-col text-[ghostwhite] text-[15px] text-center p-[20px] mb-[10px] mt-[30px]">
