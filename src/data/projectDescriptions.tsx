@@ -28,11 +28,11 @@ export const PORTFOLIO_TEXT = {
         description: "Built while following Bruno Simon’s Three.js Journey course, this project focuses on creating a particle system from scratch. Using Three.js BufferGeometry and Points, users can interact and customize the galaxy to adjust particle counts, spiral arm distribution and colour parameters in real time to create a dynamic 3D galaxy."
     },
     mayaVillageGenerator: {
-        title: "Maya Custom Village Generator",
+        title: "Maya Custom Village Generator Tool",
         description: "Developed as part of an assignment for BCIT's Technical Arts program, this was a study into Maya and creating custom UIs. This tool allows the user to specify inputs such as house quantities, whether to add a center gazebo, and population density."
     },
     mayaMeshGenerator: {
-        title: "Maya Mesh Randomizer",
+        title: "Maya Mesh Randomizer Tool",
         description: "This tool allows users to randomize mesh generation. Built to simplify the process of generating multiple meshes, this tool allows the user to specify scale and position ranges, as well as set quantities for each selected mesh."
     },
     walkAnimationStudy: {
