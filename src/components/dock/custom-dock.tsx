@@ -1,12 +1,14 @@
 import { Dock, DockIcon } from '../ui/dock'
-import {HomeOutlined, GithubOutlined, LinkedinFilled, MailFilled} from '@ant-design/icons'
+import {HomeOutlined, GithubOutlined, LinkedinFilled, MailFilled, BugFilled} from '@ant-design/icons'
 import './custom-dock.css'
+import { Tooltip } from 'antd'
 
 const Icons = {
     home: (props:any) => <HomeOutlined className="text-black" {...props}/>,
     github: (props: any) => <GithubOutlined {...props}/>,
     linkedin: (props:any) => <LinkedinFilled {...props}/>,
-    email: (props: any) => <MailFilled {...props}/>
+    email: (props: any) => <MailFilled {...props}/>,
+    devProfile: (props: any) => <BugFilled {...props}/>
   }
 
 
@@ -26,6 +28,11 @@ function CustomDock() {
           name: "LinkedIn",
           url: "https://www.linkedin.com/in/tracy-chow-6bab40189/",
           icon: Icons.linkedin,
+        },
+        DevProfile: {
+          name: "Dev Portfolio",
+          url: "https://tc2780.netlify.app/",
+          icon: Icons.devProfile,
         },
       },
     },
@@ -55,13 +62,15 @@ function CustomDock() {
         ))}
         {/* <Separator orientation="vertical" className="h-full" /> */}
         {Object.entries(dockData.contact.social).map(([name, social]) => (
-          
+          // <Tooltip title = {"TEST"}>
             <DockIcon className='custom-dock-icon' key={name} >
+              <Tooltip title = {social.name}>
               <a type="text" className="w-[20px]"href={social.url} target="_blank">
                 <social.icon  />
               </a>
+              </ Tooltip>
             </DockIcon>
-          
+          // </Tooltip>
         ))}
     </Dock>
     </> 

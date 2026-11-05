@@ -6,6 +6,10 @@ import steamGames from './assets/analyzingSteamGames.png'
 import catAnimationStudy from './assets/catAnimationStudy.png'
 import hauntedHouseStudy from './assets/hauntedHouseStudy.png'
 import galaxyStudy from './assets/galaxyStudy.png'
+import meshGenerator from './assets/meshGenerator.png'
+import villageGenerator from './assets/villageGenerator.png'
+import walkCycleAnimation from './assets/walkCycleAnimation.png'
+import animatedSeaStudy from './assets/animatedSeaStudy.png'
 
 import './App.css'
 import { Particles } from './components/ui/particles'
@@ -67,34 +71,38 @@ function App() {
         <CustomDock></CustomDock>
       </div>
 
-      {/* NEW PROJECT ---------- */}
+      {/* MAYA VILLAGE GENERATOR---------- */}
       <ProjectCard
-        title="Maya Village Generator"
-        description="testDes"
-        coverType='img'
-        coverImgSrc={websiteV2}
-        actions={[{
-          title: 'test',
-          key: 'test',
-          icon: ICONS.github,
-          link: 'https://www.students.cs.ubc.ca/~cs-427/games'
-        }]}
+        title={PORTFOLIO_TEXT.mayaVillageGenerator.title}
+        description={PORTFOLIO_TEXT.mayaVillageGenerator.description}
+        coverType='vid'
+        coverVidSrc='https://www.youtube.com/embed/blJr19PfY6Q?si=nOjVS7EJm2bzQ68b'
+        thumbnailSrc={villageGenerator}
+        thumbnailAlt="Maya Village Generator"
+      />
+
+      <div className="p-[5vh]"></div>
+
+      {/* MAYA MESH RANDOMIZER---------- */}
+      <ProjectCard
+        title={PORTFOLIO_TEXT.mayaMeshGenerator.title}
+        description={PORTFOLIO_TEXT.mayaMeshGenerator.description}
+        coverType='vid'
+        coverVidSrc='https://www.youtube.com/embed/XIiO6OCjXbI?si=2tGkhKKZ-WzqV6Yp'
+        thumbnailSrc={meshGenerator}
+        thumbnailAlt="Maya Mesh Generator"
       />
 
       <div className="p-[5vh]"></div>
 
       {/* WALK CYCLE STUDY-------- */}
       <ProjectCard
-        title="Maya Walk Cycle Study"
-        description="testDes"
-        coverType='img'
-        coverImgSrc={websiteV2}
-        actions={[{
-          title: 'test',
-          key: 'test',
-          icon: ICONS.github,
-          link: 'https://www.students.cs.ubc.ca/~cs-427/games'
-        }]}
+        title={PORTFOLIO_TEXT.walkAnimationStudy.title}
+        description={PORTFOLIO_TEXT.walkAnimationStudy.description}
+        coverType='vid'
+        coverVidSrc='https://www.youtube.com/embed/njaD1UJM7xI?si=BTS8mnVqUSfA8p-q'
+        thumbnailSrc={walkCycleAnimation}
+        thumbnailAlt="Walk Animation Study"
       />
 
       <div className="p-[5vh]"></div>
@@ -114,6 +122,23 @@ function App() {
           link: "https://www.students.cs.ubc.ca/~cs-427/games"
         }]}
         tags={["C++", "OpenGL", "C"]}
+      />
+
+      <div className="p-[5vh]"></div>
+
+      {/* Raging Sea Study --------*/}
+      <ProjectCard 
+        title={PORTFOLIO_TEXT.animatedSeaStudy.title}
+        description={PORTFOLIO_TEXT.animatedSeaStudy.description} 
+        coverType='img'
+        coverImgSrc={animatedSeaStudy}
+        actions={[{
+          title: 'Hosted on Vercel',
+          key: 'sea-link',
+          icon: ICONS.link,
+          link: "https://animated-sea.vercel.app/"
+        }]}
+        tags={["ThreeJS", "JS"]}
       />
 
       <div className="p-[5vh]"></div>
